@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:major_project/alertdia.dart';
+import 'package:major_project/login.dart';
 import 'package:major_project/main.dart';
+import 'package:major_project/profile.dart';
 import 'alertdia.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -42,42 +44,31 @@ class WelcomePage extends StatelessWidget {
               ),
             ),
             //),
+
+            Divider(
+              thickness: 5,
+              color: Colors.greenAccent.shade200,
+            ),
             // ListTile(
             //   title: Text(
-            //     "Order History",
+            //     "Help",
             //     style: TextStyle(color: Colors.black87, fontSize: 15),
             //   ),
             //   trailing: Icon(
-            //     Icons.history,
-            //     color: Colors.purple.shade200,
+            //     Icons.help,
+            //     color: Colors.greenAccent.shade200,
             //   ),
             // ),
-            Divider(
-              thickness: 5,
-              color: Colors.greenAccent.shade200,
-            ),
-            ListTile(
-              title: Text(
-                "Help",
-                style: TextStyle(color: Colors.black87, fontSize: 15),
-              ),
-
-              ///tileColor: Colors.purple,
-              trailing: Icon(
-                Icons.help,
-                color: Colors.greenAccent.shade200,
-              ),
-            ),
-            Divider(
-              thickness: 5,
-              color: Colors.greenAccent.shade200,
-            ),
+            // Divider(
+            //   thickness: 5,
+            //   color: Colors.greenAccent.shade200,
+            // ),
 
             ListTile(
-              // onTap: () {
-              //   Navigator.push(context,
-              //       MaterialPageRoute(builder: (context) => Account()));
-              // },
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Profile()));
+              },
               title: Text(
                 "Update Profile",
                 style: TextStyle(color: Colors.black87, fontSize: 15),
@@ -97,11 +88,12 @@ class WelcomePage extends StatelessWidget {
                 "Logout",
                 style: TextStyle(color: Colors.black87, fontSize: 15),
               ),
-              onTap: () async {
-                final action = await AlertDialogs.yescanceldialog(
-                    context, "Logout", "Are you sure ?");
-              },
-              //tileColor: Colors.greenAccent.shade200,
+              onTap: () => _showMessageDialog(context),
+              // async {
+              //   final action = await AlertDialogs.yescanceldialog(
+              //       context, "Logout", "Are you sure ?");
+              // },
+
               trailing: Icon(
                 Icons.logout,
                 color: Colors.greenAccent.shade200,
@@ -159,3 +151,24 @@ class WelcomePage extends StatelessWidget {
     );
   }
 }
+
+_showMessageDialog(BuildContext context) => showDialog(
+    context: context,
+    builder: (context) => AlertDialog(
+          title: Text('Alert!!!'),
+          content: Text('Are you sure you want to logout?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Cancel'),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              child: Text('Yes'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Login();
+                }));
+              },
+            )
+          ],
+        ));
