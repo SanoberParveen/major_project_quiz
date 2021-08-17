@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1077509946200",
+    "project_id": "majorproject-d9b48",
+    "storage_bucket": "majorproject-d9b48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077509946200:android:2476ee45ff0358dfdc432d",
+        "android_client_info": {
+          "package_name": "joskalliath.com.major_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077509946200-6ebj4s28u45nndlsktjhjeqo818nei6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGPm2Wf_Qq-hyHSf39PPXORUaQKWkAVsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077509946200-6ebj4s28u45nndlsktjhjeqo818nei6t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
